@@ -11,7 +11,7 @@ public class Employee
 		int total_hr=0;
 		int emp_days=0;
 		int emp_wage=0;
-		while((emp_days<20) || total_hr<100)
+		while((emp_days<20) && total_hr<100)
 		{
 			double number=Math.floor(Math.random()*10)%2;
 			if(full_time== number)
