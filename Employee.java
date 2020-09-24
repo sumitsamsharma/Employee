@@ -2,12 +2,12 @@ package Emp_info;
 
 public class Employee 
 {
+	public static final int full_time=1;
+	public static final int part_time=0;
+	public static final int absent=2;
+	public static final int emp_wage_hr=20;
 	public static void main(String[] args)
 	{
-		int full_time=1;
-		int part_time=0;
-		int absent=2;
-		int emp_wage_hr=20;
 		int emp_hr=0;
 		int total_hr=0;
 		int emp_days=20;
