@@ -1,6 +1,5 @@
 package Emp_info;
 
-
 class Employee_func
 {
 	    public static final int full_time=1;
@@ -17,10 +16,11 @@ class Employee_func
 	    { 
 	    	int emp_hr=0;
 	    	int days=0;
-	    	double number=Math.floor(Math.random()*10)%3;
+	    	System.out.println("The number of :"+total_no_days);
 	    	while(days<total_no_days)
 	    	{
-			    if(full_time== number)
+	    		int number=(int)Math.floor(Math.random()*10)%3;
+	    		if(full_time== number)
 			       emp_hr=8;
 			    else if(part_time== number)
 				   emp_hr=4;
