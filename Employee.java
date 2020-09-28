@@ -48,7 +48,7 @@ class Employee_func
 	    public void set_wage_per_hour(int wage) 
 	    { 
 	    	emp_wage_hr=wage; 
-
+	    }
 	    public void set_days(int total_days) 
 	    { 
 	      total_no_days=total_days; 
