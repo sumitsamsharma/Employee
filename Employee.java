@@ -1,62 +1,35 @@
 package Emp_info;
 
-public interface Inter_computeWage
-{ 
-	public void add_CompanyWage(String company, int empRatePerHour, int num0fWorkingDays, int maxHoursPerMonth); 
-    public void get_total_wage(); 
-}   
-
-public class CompanyEmpWage 
-{ 
-   public final String company; 
-   public final int emp_wage_hr,total_days,total_hours; 
-   public int totalEmpWage;
-   
-   public CompanyEmpWage(String company, int emp_wage_hr, int total_days, int total_hours) 
-   { 
-	  this.company = company; 
-      this.emp_wage_hr=emp_wage_hr; 
-      this.total_days=total_days; 
-      this.total_hours = total_hours; 
-   }
-   
-   public void setEmpWage(int totalEmpWage) 
-   { 
-	   this.totalEmpWage = totalEmpWage; 
-   }
-   
-  @Override 
-   public String toString() 
-  {
-	  return "Total employee wage for company " +company+" is: "+ totalEmpWage; 
-  }
-} 
+import java.util.LinkedList;
 
 public class Employee implements Inter_computeWage
 {
 	    public static final int full_time=1;
 	    public static final int part_time=0;
-	   
+	    private LinkedList<CompanyEmpWage> Emp_wage_list;
+	    
 	    int total_companies=0;
-	    private CompanyEmpWage[]  company_emp_wage;
 	    
 	    public void add_CompanyWage(String company, int emp_wage_hr, int total_no_days, int total_hr) 
 	    {
-	        company_emp_wage[total_companies] = new CompanyEmpWage(company,emp_wage_hr, total_no_days,total_hr); 
-	        total_companies++; 
+	    	CompanyEmpWage wage= new CompanyEmpWage(company,emp_wage_hr, total_no_days,total_hr); 
+	    	Emp_wage_list.add(wage);
+	    	total_companies++; 
 	    } 
 	    public void get_total_wage()
 	    {
-	         for (int i = 0; i < total_companies; i++) 
+	         for (int i = 0; i < Emp_wage_list.size(); i++) 
 	         { 
-	        	 company_emp_wage[i].setEmpWage(this.get_total_wage(company_emp_wage[i])); 
-	        	 System.out.println(company_emp_wage[i]); 
+	        	 CompanyEmpWage wage=Emp_wage_list.get(i);
+	        	 wage.setEmpWage(this.get_total_wage(wage));
+	        	 System.out.println(wage); 
 	         }
 	    }
 	    
 	    public Employee()
 	    {
-	    	company_emp_wage= new CompanyEmpWage[4];
+	    	Emp_wage_list= new LinkedList<>(); 
+	    	
 	    }
 	    
 	    private int get_total_wage(CompanyEmpWage companyEmpWage) 
