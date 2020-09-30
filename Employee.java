@@ -1,5 +1,30 @@
 package Emp_info;
 
+public class CompanyEmpWage 
+{ 
+   public final String company; 
+   public final int emp_wage_hr,total_days,total_hours; 
+   public int totalEmpWage;
+   
+   public CompanyEmpWage(String company, int emp_wage_hr, int total_days, int total_hours) 
+   { 
+	  this.company = company; 
+      this.emp_wage_hr=emp_wage_hr; 
+      this.total_days=total_days; 
+      this.total_hours = total_hours; 
+   }
+   
+   public void setEmpWage(int totalEmpWage) 
+   { 
+	   this.totalEmpWage = totalEmpWage; 
+   }
+   
+  @Override 
+   public String toString() 
+  {
+	  return "Total Emp Wage for Company: " +company+" is: "+ totalEmpWage; 
+  }
+} 
 
 public class Employee
 {
