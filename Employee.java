@@ -1,5 +1,11 @@
 package Emp_info;
 
+public interface Inter_computeWage
+{ 
+	public void add_CompanyWage(String company, int empRatePerHour, int num0fWorkingDays, int maxHoursPerMonth); 
+    public void get_total_wage(); 
+}   
+
 public class CompanyEmpWage 
 { 
    public final String company; 
@@ -22,11 +28,11 @@ public class CompanyEmpWage
   @Override 
    public String toString() 
   {
-	  return "Total Emp Wage for Company: " +company+" is: "+ totalEmpWage; 
+	  return "Total employee wage for company " +company+" is: "+ totalEmpWage; 
   }
 } 
 
-public class Employee
+public class Employee implements Inter_computeWage
 {
 	    public static final int full_time=1;
 	    public static final int part_time=0;
@@ -34,12 +40,12 @@ public class Employee
 	    int total_companies=0;
 	    private CompanyEmpWage[]  company_emp_wage;
 	    
-	    private void add_CompanyWage(String company, int emp_wage_hr, int total_no_days, int total_hr) 
+	    public void add_CompanyWage(String company, int emp_wage_hr, int total_no_days, int total_hr) 
 	    {
 	        company_emp_wage[total_companies] = new CompanyEmpWage(company,emp_wage_hr, total_no_days,total_hr); 
 	        total_companies++; 
 	    } 
-	    private void get_total_wage()
+	    public void get_total_wage()
 	    {
 	         for (int i = 0; i < total_companies; i++) 
 	         { 
