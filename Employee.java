@@ -39,7 +39,6 @@ public class Employee implements Inter_computeWage
 	    public static final int full_time=1;
 	    public static final int part_time=0;
 	    private LinkedList<CompanyEmpWage> Emp_wage_list;
-	    
 	    int total_companies=0;
 	    
 	    public void add_CompanyWage(String company, int emp_wage_hr, int total_no_days, int total_hr) 
@@ -63,7 +62,7 @@ public class Employee implements Inter_computeWage
 	    	Emp_wage_list= new LinkedList<>(); 
 	    	
 	    }
-	    
+  
 	    private int get_total_wage(CompanyEmpWage companyEmpWage) 
 	    {   
 	    	int emp_hr = 0, total_hours = 0, total_days = 0;
@@ -84,10 +83,11 @@ public class Employee implements Inter_computeWage
 	        		 emp_hr=0; 
 	          }
 	          
-	    	  total_hours += emp_hr; 
-	    	}
-	        return total_hours * companyEmpWage.emp_wage_hr; 
-	    } 
+	    	   total_hours += emp_hr; 
+	    	 }
+	       return total_hours * companyEmpWage.emp_wage_hr; 
+      }
+} 
 
 	public static void main(String[] args)
 	{
