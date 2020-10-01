@@ -1,6 +1,8 @@
 package Emp_info;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public interface Inter_computeWage
 { 
@@ -39,12 +41,14 @@ public class Employee implements Inter_computeWage
 	    public static final int full_time=1;
 	    public static final int part_time=0;
 	    private LinkedList<CompanyEmpWage> Emp_wage_list;
+	    private ArrayList<Integer> wage_per_day=new ArrayList<Integer>();
 	    int total_companies=0;
 	    
 	    public void add_CompanyWage(String company, int emp_wage_hr, int total_no_days, int total_hr) 
 	    {
 	    	CompanyEmpWage wage= new CompanyEmpWage(company,emp_wage_hr, total_no_days,total_hr); 
 	    	Emp_wage_list.add(wage);
+			  wage_per_day.add(emp_wage_hr);
 	    	total_companies++; 
 	    } 
 	    public void get_total_wage()
