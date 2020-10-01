@@ -108,4 +108,3 @@ public class Employee implements Inter_computeWage
 		System.out.println("Total wage for Rel is: "+emp_wage_build.total_wage("Rel"));
 	}
 }
-	    
