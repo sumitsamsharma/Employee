@@ -30,9 +30,6 @@ public class Employee
 {
 	    public static final int full_time=1;
 	    public static final int part_time=0;
-	   
-	    int total_companies=0;
-	    private CompanyEmpWage[]  company_emp_wage;
 	    
 	    private void add_CompanyWage(String company, int emp_wage_hr, int total_no_days, int total_hr) 
 	    {
@@ -52,7 +49,7 @@ public class Employee
 	    {
 	    	company_emp_wage= new CompanyEmpWage[4];
 	    }
-	    
+  
 	    private int get_total_wage(CompanyEmpWage companyEmpWage) 
 	    {   
 	    	int emp_hr = 0, total_hours = 0, total_days = 0;
@@ -73,10 +70,11 @@ public class Employee
 	        		 emp_hr=0; 
 	          }
 	          
-	    	  total_hours += emp_hr; 
-	    	}
-	        return total_hours * companyEmpWage.emp_wage_hr; 
-	    } 
+	    	   total_hours += emp_hr; 
+	    	 }
+	       return total_hours * companyEmpWage.emp_wage_hr; 
+      }
+} 
 
 	public static void main(String[] args)
 	{
